@@ -1,0 +1,202 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usepackage{makecell}
+\usepackage{booktabs}% http://ctan.org/pkg/booktabs
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    pdftitle={Curriculum Vitae},
+    pdfpagemode=FullScreen
+}
+
+\geometry{
+    left=1cm,
+    right=1cm,
+    marginparwidth=6.8cm,
+    marginparsep=1.2cm,
+    top=1.25cm,
+    bottom=1.25cm,
+    footskip=2\baselineskip
+}
+
+\definecolor{star}{HTML}{deca37}
+\colorlet{accent}{blue!70!black}
+\colorlet{heading}{black}
+\colorlet{emphasis}{black}
+\colorlet{body}{black!80!white}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}\,}
+
+\newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{\normalfont #1}\hspace{0.5em}#2\hspace{2em}}}
+
+\newcommand{\emailsymbol}{\faAt}
+\newcommand{\githubsymbol}{\faGithub}
+
+\newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
+\newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
+
+\newcommand{\svssec}[1]{%
+{\color{heading}\LARGE\bfseries\MakeUppercase{#1}}\\[-1ex]%
+  {\color{heading}\rule{\linewidth}{1.5pt}\par}\medskip}
+
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\raggedright\color{black}%
+    {\Huge\bfseries\MakeUppercase{Paolo Bettelini}\par}
+
+\vspace{0.4cm}
+
+\github{\href{https://github.com/paolobettelini}{github.com/paolobettelini}}%
+\email{\href{mailto:paolo.bettelini@bluewin.ch}{paolo.bettelini@bluewin.ch}}
+
+\vspace{0.4cm}
+
+\begin{minipage}[t]{0.45\textwidth}
+\svssec{EDUCATION}
+{\large\circled{1}\color{accent}Scuola Primaria di Caslano}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\textit{Elementary School} \\
+\faCalendar\, 2010 -- 2015 \\
+\faMapMarker\, Caslano, Ticino%
+}
+
+{\large\circled{2}\color{accent}Scuola Media Agno}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\textit{Middle School} \\
+\faCalendar\, 2015 -- 2019 \\
+\faMapMarker\, Agno, Ticino%
+}
+
+\vspace{0.25cm}
+
+{\large\circled{3}\color{accent}Scuola d'Arti e Mestieri (SAMT)}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\textit{Computer Science Section} \\
+\faCalendar\, 2019 -- 2023 \\
+\faMapMarker\, Trevano, Ticino \\
+\tabitem Attestato federale di capacità (AFC) \\
+\tabitem Maturità professionale
+}
+
+\vspace{0.5cm}
+
+\svssec{Some Projects}
+{\large\color{accent}Blockchain Proof-of-Concept}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\faCalendar\, 2022 \\
+\textit{A blockchain from scratch, with
+a cryptographically} \\ \textit{secure distribuited ledger, PoW mining, transaction} \\ \textit{system and a web explorer.} \\
+\faGithub\, \href{https://github.com/paolobettelini/blockchain}{paolobettelini/blockchain}
+}
+
+\vspace{0.25cm}
+
+{\large\color{accent}Fourier Series Website}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\faCalendar\, 2021 \\
+\textit{A website about Fourier series and Fourier transforms,} \\ \textit{with interactive animations and explanations.} \\
+\faGithub\, \href{https://github.com/paolobettelini/fourier-series}{paolobettelini/fourier-series}
+}
+
+\vspace{0.25cm}
+
+{\large\color{accent}Paintguessr}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\faCalendar\, 2021 \\
+\textit{An online multiplayer game where players have to guess} \\ \textit{other players' drawings.} \\
+\faGithub\, \href{https://github.com/paolobettelini/paintguessr}{paolobettelini/paintguessr}
+}
+
+\vspace{0.25cm}
+
+{\large\color{accent}AES Implementation}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\faCalendar\, 2021 \\
+\textit{A pure Java implementation of the AES encryption} \\ \textit{algorithm. Supports 128, 192, 256 bits keys, ECB} \\ \textit{and CBC cipher modes and ANSI X9.23, ISO 10126,} \\ \textit{PKCS\#7, ISO/IEC 7816-4 paddings.} \\
+\faGithub\, \href{https://github.com/paolobettelini/advanced-encryption-standard}{paolobettelini/advanced-encryption-standard}
+}
+
+\end{minipage}\hfill\vrule depth 23cm\hfill%
+\begin{minipage}[t]{0.45\textwidth}
+\svssec{Personal info}
+
+\begin{center}
+\begin{tikzpicture}
+	\clip (0,0) circle (2.5cm) node {\includegraphics[width=5cm]{pic}};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Full name:} Paolo Bettelini \\
+\textbf{Date of birth:} February 18th, 2004 \\
+\textbf{Nationality:} Swiss
+
+\vspace{0.5cm}
+
+\svssec{Technologies/skills}
+\cvtag{Java} 
+\cvtag{Rust}
+\cvtag{C\#}
+\cvtag{Git}
+\cvtag{Algorithms}
+\cvtag{.NET}
+
+\cvtag{\LaTeX}
+\cvtag{Linux}
+\cvtag{Networking}
+\cvtag{PHP}
+\cvtag{HTML}
+\cvtag{JS}
+\cvtag{CSS}
+\cvtag{Virtualization}
+\cvtag{RabbitMQ}
+\cvtag{SQL}
+\cvtag{Bash}
+
+\vspace{0.5cm}
+
+\svssec{Work Experience}
+{\large\color{accent}Pico Systems Sagl}\par
+\makebox[0.75cm]{}\makecell[l]{%
+\textit{Internship} \\
+\faCalendar\, June 2022, 2 Months \\
+\faMapMarker\, Lugano \\
+\tabitem Software development
+}
+
+\vspace{0.5cm}
+
+\svssec{Languages}
+\tabitem Italian (Mother tongue) \par
+\tabitem English (B1) \par
+\tabitem German (B1)
+
+\vspace{0.5cm}
+
+\svssec{Interests}
+Mathematics, Rust programming, Rendering,
+Artificial intelligence, Quantum mechanics,
+Problem solving, Algorithms.
+\end{minipage}
+
+\end{document}
